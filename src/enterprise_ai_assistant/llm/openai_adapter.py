@@ -43,7 +43,6 @@ class OpenAIAdapter:
         response = self._client.responses.create(
             model=self._settings.openai_model,
             input=messages,
-            temperature=request.config.temperature,
             max_output_tokens=request.config.max_output_tokens,
         )
 

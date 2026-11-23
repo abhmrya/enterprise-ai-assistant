@@ -1,8 +1,8 @@
 
 from enterprise_ai_assistant.llm.contracts import (
+    LLMMessage,
     LLMRequest,
     LLMResponse,
-    LLMMessage,
     MessageRole,
     TokenUsage,
 )

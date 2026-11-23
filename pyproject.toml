@@ -6,6 +6,7 @@ description = "Enterprise AI Assistant using LangChain, LangGraph and MCP"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "google-genai>=3.6.1",
     "openai>=3.57.0",
     "python-dotenv>=1.2.4",
 ]

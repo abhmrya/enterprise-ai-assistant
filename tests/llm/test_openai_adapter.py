@@ -46,7 +46,6 @@ def test_openai_adapter_converts_request_and_response() -> None:
             ),
         ),
         config=GenerationConfig(
-            temperature=0.2,
             max_output_tokens=500,
         ),
     )
@@ -54,20 +53,19 @@ def test_openai_adapter_converts_request_and_response() -> None:
     result = adapter.generate(request)
 
     adapter._client.responses.create.assert_called_once_with(
-        model="test-model",
-        input=[
-            {
-                "role": "system",
-                "content": "You are an enterprise AI assistant.",
-            },
-            {
-                "role": "user",
-                "content": "Explain MCP.",
-            },
-        ],
-        temperature=0.2,
-        max_output_tokens=500,
-    )
+    model="test-model",
+    input=[
+        {
+            "role": "system",
+            "content": "You are an enterprise AI assistant.",
+        },
+        {
+            "role": "user",
+            "content": "Explain MCP.",
+        },
+    ],
+    max_output_tokens=500,
+)
 
     assert result.content == (
         "MCP allows applications to connect with tools."
